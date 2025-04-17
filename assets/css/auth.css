@@ -1,0 +1,169 @@
+@import 'base.css';
+
+/* Authentication Pages */
+.auth-container {
+    min-height: calc(100vh - 76px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0;
+    background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+}
+
+.auth-card {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(99, 102, 241, 0.1);
+    border-radius: 1.5rem;
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+    transition: all var(--transition-speed) ease;
+    width: 100%;
+    max-width: 480px;
+}
+
+.auth-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(99, 102, 241, 0.15);
+}
+
+.auth-card .card-header {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(20, 184, 166, 0.1));
+    border-bottom: 1px solid rgba(99, 102, 241, 0.1);
+    padding: 1.5rem;
+}
+
+.auth-card .card-header h3 {
+    color: var(--primary-color);
+    font-weight: 700;
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.auth-card .card-body {
+    padding: 2rem;
+}
+
+.auth-card .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.auth-card .form-label {
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.auth-card .input-group {
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-speed) ease;
+}
+
+.auth-card .input-group:focus-within {
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+.auth-card .input-group-text {
+    background: white;
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    color: var(--primary-color);
+    padding: 0.75rem 1rem;
+}
+
+.auth-card .form-control {
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    transition: all var(--transition-speed) ease;
+}
+
+.auth-card .form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: none;
+}
+
+.auth-card .btn-outline-secondary {
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    color: var(--text-secondary);
+}
+
+.auth-card .btn-outline-secondary:hover {
+    background: rgba(99, 102, 241, 0.1);
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.auth-card .form-check {
+    padding-left: 1.75rem;
+    margin-bottom: 1rem;
+}
+
+.auth-card .form-check-input {
+    border-color: rgba(99, 102, 241, 0.3);
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-left: -1.75rem;
+}
+
+.auth-card .form-check-input:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.auth-card .form-check-label {
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.auth-card .btn-primary {
+    padding: 0.875rem;
+    font-size: 1.1rem;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.auth-card .auth-links {
+    text-align: center;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(99, 102, 241, 0.1);
+}
+
+.auth-card .auth-links a {
+    color: var(--primary-color);
+    font-weight: 600;
+    transition: all var(--transition-speed) ease;
+    text-decoration: none;
+}
+
+.auth-card .auth-links a:hover {
+    color: var(--primary-dark);
+}
+
+/* Error Messages */
+.auth-card .alert {
+    border-radius: 1rem;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid transparent;
+}
+
+.auth-card .alert-danger {
+    background-color: rgba(239, 68, 68, 0.1);
+    border-color: rgba(239, 68, 68, 0.2);
+    color: var(--danger-color);
+}
+
+/* Responsive Design */
+@media (max-width: 576px) {
+    .auth-card {
+        margin: 1rem;
+    }
+
+    .auth-card .card-body {
+        padding: 1.5rem;
+    }
+}

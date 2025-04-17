@@ -1,0 +1,1055 @@
+# TaskMaster - Task Management System Documentation
+
+## INTRODUCTION
+
+### Introduction of project
+TaskMaster is a comprehensive web-based task management system designed to help users organize, track, and manage their tasks efficiently. The system provides a user-friendly interface for creating, updating, and monitoring tasks, with features such as task prioritization, status tracking, deadline management, and reporting capabilities. TaskMaster aims to improve productivity and task organization for both individual users and administrators who oversee multiple users.
+
+### Existing System and Need for System
+Many existing task management solutions are either too complex for casual users or too simplistic for professional needs. Users often resort to using spreadsheets, paper notes, or email to track tasks, which can lead to disorganization, missed deadlines, and difficulty in tracking progress. There is a need for a system that strikes the right balance between simplicity and functionality, providing essential task management features without overwhelming users with complexity.
+
+TaskMaster addresses these needs by offering:
+- A clean, intuitive interface that requires minimal training
+- Core task management functionality without unnecessary complexity
+- Robust tracking and reporting capabilities
+- Administrative oversight for team environments
+- Secure user authentication and data protection
+
+### Scope of Work
+The TaskMaster system encompasses the following scope:
+
+1. **User Management**
+   - User registration and authentication
+   - User profile management
+   - Role-based access control (user and admin roles)
+   - Password reset functionality
+
+2. **Task Management**
+   - Task creation with title, description, deadline, and priority
+   - Task status tracking (pending, in progress, completed)
+   - Task filtering and searching
+   - Task updates and history tracking
+
+3. **Dashboard and Reporting**
+   - User dashboard with task statistics and upcoming deadlines
+   - Task completion reports
+   - Overdue task reports
+   - User activity tracking
+   - Analytics for administrators
+
+4. **Administrative Functions**
+   - User management (view, edit, activate/deactivate, delete)
+   - System-wide reporting and analytics
+   - Activity monitoring
+
+### Operating Environment - Hardware and Software
+
+**Server Requirements:**
+- Web server: Apache 2.4+ with mod_rewrite enabled
+- Database: MySQL 5.7+ or MariaDB 10.2+
+- PHP: Version 7.4+ with PDO, mysqli, and mbstring extensions
+- Disk space: Minimum 100MB for application files
+
+**Client Requirements:**
+- Web browser: Modern browsers (Chrome, Firefox, Safari, Edge)
+- JavaScript: Enabled
+- Screen resolution: Minimum 1024x768, responsive design for mobile devices
+- Internet connection: Minimum 1 Mbps
+
+**Development Environment:**
+- XAMPP/WAMP/MAMP for local development
+- Version control: Git
+- Code editor: Any modern IDE or text editor
+
+### Detail Description of Technology Used
+
+**Frontend Technologies:**
+1. **HTML5**: For structuring the web pages
+2. **CSS3**: For styling, with Tailwind CSS framework for responsive design
+3. **JavaScript**: For client-side interactivity
+4. **Font Awesome**: For icons
+5. **Chart.js**: For data visualization in analytics
+
+**Backend Technologies:**
+1. **PHP 7.4+**: Server-side scripting language
+2. **MySQL/MariaDB**: Relational database management system
+3. **PDO (PHP Data Objects)**: For database connectivity and prepared statements
+
+**Security Measures:**
+1. **Password Hashing**: Using PHP's password_hash() function with bcrypt
+2. **Prepared Statements**: To prevent SQL injection
+3. **Session Management**: Secure session handling
+4. **Input Validation**: Server-side validation of all user inputs
+5. **CSRF Protection**: For form submissions
+
+**Architecture Pattern:**
+The system follows a simplified MVC (Model-View-Controller) pattern:
+- **Model**: Database interaction through PDO
+- **View**: HTML templates with PHP for dynamic content
+- **Controller**: PHP scripts handling business logic
+
+## PROPOSED SYSTEMS
+
+### Objectives of System
+The primary objectives of the TaskMaster system are:
+
+1. **Improve Task Organization**: Provide users with a centralized platform to create, organize, and track their tasks.
+
+2. **Enhance Productivity**: Help users prioritize tasks, meet deadlines, and focus on what matters most.
+
+3. **Facilitate Progress Tracking**: Enable users to track task status and progress over time.
+
+4. **Provide Insights**: Offer analytics and reporting to help users understand their productivity patterns.
+
+5. **Enable Administrative Oversight**: Allow administrators to manage users and monitor system-wide activity.
+
+6. **Ensure Data Security**: Protect user data and ensure secure access to the system.
+
+7. **Deliver User-Friendly Experience**: Create an intuitive interface that requires minimal training.
+
+8. **Support Decision Making**: Provide reports and analytics to support data-driven decision making.
+
+### Proposed System
+The proposed TaskMaster system is a web-based application with the following key components:
+
+1. **Authentication System**:
+   - Secure login and registration
+   - Password reset functionality
+   - Session management
+   - Role-based access control
+
+2. **User Dashboard**:
+   - Task statistics overview
+   - Progress visualization
+   - Upcoming deadlines
+   - Quick action buttons
+
+3. **Task Management Module**:
+   - Task creation and editing
+   - Status updates
+   - Priority assignment
+   - Deadline management
+   - Filtering and searching
+
+4. **Reporting System**:
+   - Task completion reports
+   - Overdue task reports
+   - User activity reports
+   - PDF export functionality
+
+5. **Admin Panel**:
+   - User management
+   - System-wide analytics
+   - Activity monitoring
+   - Report generation
+
+The system architecture follows a three-tier model:
+- **Presentation Layer**: HTML, CSS, JavaScript for the user interface
+- **Application Layer**: PHP for business logic and data processing
+- **Data Layer**: MySQL database for data storage and retrieval
+
+### User Requirements
+Based on the analysis of user needs, the following requirements have been identified:
+
+**Functional Requirements:**
+
+1. **User Authentication**
+   - Users must be able to register with email and password
+   - Users must be able to log in securely
+   - Users must be able to reset forgotten passwords
+   - The system must support different user roles (user and admin)
+
+2. **Task Management**
+   - Users must be able to create new tasks with title, description, deadline, and priority
+   - Users must be able to view their tasks in a list format
+   - Users must be able to update task status (pending, in progress, completed)
+   - Users must be able to filter tasks by status, priority, and date range
+   - Users must be able to search for tasks by title or description
+   - Users must be able to delete their own tasks
+
+3. **Dashboard**
+   - Users must be able to view task statistics (total, completed, in progress, pending)
+   - Users must be able to see upcoming deadlines
+   - Users must be able to access quick actions from the dashboard
+
+4. **Reports**
+   - Users must be able to view their task completion history
+   - Users must be able to identify overdue tasks
+   - Users must be able to generate and download reports in PDF format
+
+5. **Admin Functions**
+   - Admins must be able to view all users in the system
+   - Admins must be able to edit user details
+   - Admins must be able to activate or deactivate user accounts
+   - Admins must be able to delete user accounts
+   - Admins must be able to view system-wide analytics
+   - Admins must be able to generate system-wide reports
+
+**Non-Functional Requirements:**
+
+1. **Usability**
+   - The system must have an intuitive, user-friendly interface
+   - The system must be accessible on both desktop and mobile devices
+   - The system must provide clear feedback for user actions
+
+2. **Performance**
+   - Page load times must be under 3 seconds
+   - The system must support at least 100 concurrent users
+   - Database queries must be optimized for speed
+
+3. **Security**
+   - User passwords must be securely hashed
+   - All form submissions must be protected against CSRF attacks
+   - Database queries must use prepared statements to prevent SQL injection
+   - User sessions must be securely managed
+
+4. **Reliability**
+   - The system must be available 99.9% of the time
+   - Data backups must be performed daily
+   - The system must handle errors gracefully with appropriate user feedback
+
+5. **Scalability**
+   - The system architecture must support future growth in users and data
+   - The database design must allow for efficient scaling
+
+## ANALYSIS AND DESIGN
+
+### Entity Relationship Diagram (ERD)
+
+The Entity Relationship Diagram (ERD) illustrates the database structure and relationships between entities in the TaskMaster system.
+
+**PlantUML Code:**
+```
+@startuml TaskMaster ERD
+
+!define TABLE(name,desc) class name as "desc" << (T,#FFAAAA) >>
+!define PRIMARY_KEY(x) <b><color:#b8861b><&key></color> x</b>
+!define FOREIGN_KEY(x) <color:#aaaaaa><&key></color> x
+!define COLUMN(x) <color:#efefef><&media-record></color> x
+
+TABLE(users, "users") {
+  PRIMARY_KEY(id) : INT AUTO_INCREMENT
+  COLUMN(name) : VARCHAR(100) NULL
+  COLUMN(email) : VARCHAR(100) NOT NULL UNIQUE
+  COLUMN(password) : VARCHAR(255) NOT NULL
+  COLUMN(role) : ENUM('user', 'admin') NOT NULL DEFAULT 'user'
+  COLUMN(status) : ENUM('active', 'inactive') NOT NULL DEFAULT 'active'
+  COLUMN(last_login) : TIMESTAMP NULL
+  COLUMN(created_at) : TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+}
+
+TABLE(tasks, "tasks") {
+  PRIMARY_KEY(id) : INT AUTO_INCREMENT
+  FOREIGN_KEY(user_id) : INT NOT NULL
+  COLUMN(title) : VARCHAR(100) NOT NULL
+  COLUMN(description) : TEXT NULL
+  COLUMN(deadline) : DATETIME NOT NULL
+  COLUMN(status) : ENUM('pending', 'in_progress', 'completed') NOT NULL DEFAULT 'pending'
+  COLUMN(priority) : ENUM('low', 'medium', 'high') NOT NULL DEFAULT 'medium'
+  COLUMN(created_at) : TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+  COLUMN(updated_at) : TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+}
+
+TABLE(task_updates, "task_updates") {
+  PRIMARY_KEY(id) : INT AUTO_INCREMENT
+  FOREIGN_KEY(task_id) : INT NOT NULL
+  FOREIGN_KEY(user_id) : INT NULL
+  COLUMN(status_from) : ENUM('pending', 'in_progress', 'completed') NOT NULL
+  COLUMN(status_to) : ENUM('pending', 'in_progress', 'completed') NOT NULL
+  COLUMN(update_date) : TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+  COLUMN(notes) : TEXT NULL
+}
+
+TABLE(password_resets, "password_resets") {
+  PRIMARY_KEY(id) : INT AUTO_INCREMENT
+  COLUMN(email) : VARCHAR(100) NOT NULL
+  COLUMN(token) : VARCHAR(255) NOT NULL
+  COLUMN(created_at) : TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+  COLUMN(expires_at) : TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  COLUMN(used) : BOOLEAN DEFAULT FALSE
+}
+
+TABLE(user_activity, "user_activity") {
+  PRIMARY_KEY(id) : INT AUTO_INCREMENT
+  FOREIGN_KEY(user_id) : INT
+  COLUMN(action) : VARCHAR(50) NOT NULL
+  COLUMN(details) : TEXT NULL
+  COLUMN(ip_address) : VARCHAR(45) NULL
+  COLUMN(created_at) : TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+}
+
+users "1" -- "0..*" tasks : creates >
+users "1" -- "0..*" task_updates : makes >
+users "1" -- "0..*" user_activity : generates >
+tasks "1" -- "0..*" task_updates : has >
+
+@enduml
+```
+
+**Prompt to Create ERD:**
+"Create an Entity Relationship Diagram for a task management system called TaskMaster. The system has users (with attributes like id, name, email, password, role, status, last_login, and created_at), tasks (with attributes like id, user_id, title, description, deadline, status, priority, created_at, and updated_at), task_updates to track status changes, password_resets for password recovery, and user_activity for logging actions. Show all entities, attributes, and relationships between them."
+
+### Data Flow Diagram (DFD)
+
+The Data Flow Diagram (DFD) illustrates how data flows through the TaskMaster system.
+
+**PlantUML Code:**
+```
+@startuml TaskMaster DFD
+
+!define PROCESS(name,desc) rectangle "desc" as name
+!define EXTERNAL(name,desc) rectangle "desc" as name << External >>
+!define DATA_STORE(name,desc) database "desc" as name
+
+EXTERNAL(user, "User")
+EXTERNAL(admin, "Administrator")
+
+PROCESS(auth, "Authentication\nSystem")
+PROCESS(task_mgmt, "Task Management\nSystem")
+PROCESS(dashboard, "Dashboard\nSystem")
+PROCESS(report, "Reporting\nSystem")
+PROCESS(admin_panel, "Admin\nPanel")
+
+DATA_STORE(user_db, "Users\nDatabase")
+DATA_STORE(task_db, "Tasks\nDatabase")
+DATA_STORE(activity_db, "Activity\nDatabase")
+
+' User flows
+user --> auth : Login/Register
+auth --> user : Authentication Response
+auth --> user_db : Verify/Store Credentials
+user --> task_mgmt : Create/Update/Delete Tasks
+task_mgmt --> user : Task Status/Confirmation
+task_mgmt --> task_db : Store Task Data
+task_mgmt --> activity_db : Log Task Activity
+user --> dashboard : Request Dashboard
+dashboard --> user : Task Statistics/Summaries
+dashboard --> task_db : Retrieve Task Data
+user --> report : Request Reports
+report --> user : Generated Reports
+report --> task_db : Retrieve Task Data
+
+' Admin flows
+admin --> auth : Login
+auth --> admin : Authentication Response
+admin --> admin_panel : Access Admin Functions
+admin_panel --> admin : User/System Data
+admin_panel --> user_db : Manage Users
+admin_panel --> task_db : View Task Data
+admin_panel --> activity_db : View Activity Logs
+admin_panel --> report : Generate System Reports
+report --> admin : System-wide Reports
+
+@enduml
+```
+
+**Prompt to Create DFD:**
+"Create a Data Flow Diagram for the TaskMaster system showing how data flows between users, administrators, and the various system components. Include the Authentication System, Task Management System, Dashboard System, Reporting System, and Admin Panel. Show the data stores (databases) and how data flows between all components."
+
+### Object Diagram
+
+The Object Diagram shows instances of classes and their relationships at a specific point in time.
+
+**PlantUML Code:**
+```
+@startuml TaskMaster Object Diagram
+
+object "user1:User" as user1 {
+  id = 1
+  name = "John Doe"
+  email = "john@example.com"
+  role = "user"
+  status = "active"
+}
+
+object "user2:User" as user2 {
+  id = 2
+  name = "Jane Smith"
+  email = "jane@example.com"
+  role = "admin"
+  status = "active"
+}
+
+object "task1:Task" as task1 {
+  id = 1
+  user_id = 1
+  title = "Complete Project Proposal"
+  description = "Finish the draft and send for review"
+  deadline = "2025-04-15 17:00:00"
+  status = "in_progress"
+  priority = "high"
+}
+
+object "task2:Task" as task2 {
+  id = 2
+  user_id = 1
+  title = "Weekly Team Meeting"
+  description = "Prepare agenda and attend meeting"
+  deadline = "2025-04-10 10:00:00"
+  status = "pending"
+  priority = "medium"
+}
+
+object "taskUpdate1:TaskUpdate" as update1 {
+  id = 1
+  task_id = 1
+  user_id = 1
+  status_from = "pending"
+  status_to = "in_progress"
+  update_date = "2025-04-05 09:30:00"
+}
+
+object "activity1:UserActivity" as activity1 {
+  id = 1
+  user_id = 1
+  action = "update_task_status"
+  details = "Updated task #1 status from pending to in_progress"
+  ip_address = "192.168.1.100"
+}
+
+user1 -- task1 : owns
+user1 -- task2 : owns
+user1 -- update1 : made
+user1 -- activity1 : generated
+task1 -- update1 : updated by
+
+@enduml
+```
+
+**Prompt to Create Object Diagram:**
+"Create an Object Diagram for the TaskMaster system showing specific instances of the main classes (User, Task, TaskUpdate, UserActivity) with sample attribute values. Show two users (one regular user and one admin), two tasks for the regular user, a task update, and a user activity record. Include the relationships between these objects."
+
+### Class Diagram
+
+The Class Diagram illustrates the structure of the TaskMaster system, showing classes, their attributes, methods, and relationships.
+
+**PlantUML Code:**
+```
+@startuml TaskMaster Class Diagram
+
+class User {
+  -id: int
+  -name: string
+  -email: string
+  -password: string
+  -role: enum
+  -status: enum
+  -last_login: timestamp
+  -created_at: timestamp
+  +register(name, email, password): bool
+  +login(email, password): bool
+  +resetPassword(email): bool
+  +updateProfile(name, email): bool
+  +getTasks(): array
+  +getActivityLog(): array
+}
+
+class Task {
+  -id: int
+  -user_id: int
+  -title: string
+  -description: string
+  -deadline: datetime
+  -status: enum
+  -priority: enum
+  -created_at: timestamp
+  -updated_at: timestamp
+  +create(user_id, title, description, deadline, priority): bool
+  +update(title, description, deadline, priority): bool
+  +updateStatus(status): bool
+  +delete(): bool
+  +getUpdates(): array
+}
+
+class TaskUpdate {
+  -id: int
+  -task_id: int
+  -user_id: int
+  -status_from: enum
+  -status_to: enum
+  -update_date: timestamp
+  -notes: string
+  +create(task_id, user_id, status_from, status_to, notes): bool
+}
+
+class UserActivity {
+  -id: int
+  -user_id: int
+  -action: string
+  -details: string
+  -ip_address: string
+  -created_at: timestamp
+  +log(user_id, action, details, ip_address): bool
+  +getByUser(user_id): array
+}
+
+class PasswordReset {
+  -id: int
+  -email: string
+  -token: string
+  -created_at: timestamp
+  -expires_at: timestamp
+  -used: bool
+  +create(email): string
+  +verify(email, token): bool
+  +markAsUsed(): bool
+}
+
+class Database {
+  -connection: PDO
+  +getConnection(): PDO
+  +executeQuery(sql, params): mixed
+  +beginTransaction(): void
+  +commit(): void
+  +rollback(): void
+}
+
+class PDFGenerator {
+  -title: string
+  -data: array
+  -headers: array
+  -filename: string
+  +__construct(title, filename): void
+  +setHeaders(headers): void
+  +setData(data): void
+  +output(): void
+  -generateHTML(): string
+}
+
+class Authentication {
+  +validateLogin(email, password): bool
+  +createSession(user_id, email, role): void
+  +destroySession(): void
+  +isLoggedIn(): bool
+  +isAdmin(): bool
+  +getCurrentUser(): User
+}
+
+User "1" -- "0..*" Task : creates >
+User "1" -- "0..*" TaskUpdate : makes >
+User "1" -- "0..*" UserActivity : generates >
+Task "1" -- "0..*" TaskUpdate : has >
+Authentication -- User : authenticates >
+PDFGenerator -- Task : reports on >
+
+@enduml
+```
+
+**Prompt to Create Class Diagram:**
+"Create a Class Diagram for the TaskMaster system showing the main classes (User, Task, TaskUpdate, UserActivity, PasswordReset, Database, PDFGenerator, Authentication), their attributes, methods, and relationships. Include visibility modifiers for attributes and methods, and show the multiplicity of relationships."
+
+### Use Case Diagrams
+
+The Use Case Diagrams illustrate the interactions between users and the TaskMaster system.
+
+**PlantUML Code:**
+```
+@startuml TaskMaster Use Case Diagram
+
+left to right direction
+skinparam packageStyle rectangle
+
+actor "User" as user
+actor "Administrator" as admin
+
+rectangle TaskMaster {
+  usecase "Register Account" as UC1
+  usecase "Login" as UC2
+  usecase "Reset Password" as UC3
+  usecase "View Dashboard" as UC4
+  usecase "Create Task" as UC5
+  usecase "Update Task" as UC6
+  usecase "Delete Task" as UC7
+  usecase "Filter Tasks" as UC8
+  usecase "Generate Reports" as UC9
+  usecase "Manage Users" as UC11
+  usecase "View System Analytics" as UC12
+  usecase "Generate System Reports" as UC13
+  usecase "Monitor User Activity" as UC14
+}
+
+user --> UC1
+user --> UC2
+user --> UC3
+user --> UC4
+user --> UC5
+user --> UC6
+user --> UC7
+user --> UC8
+user --> UC9
+
+admin --> UC2
+admin --> UC11
+admin --> UC12
+admin --> UC13
+admin --> UC14
+
+note "Admin inherits all User use cases" as N1
+admin .. N1
+
+@enduml
+```
+
+**Prompt to Create Use Case Diagram:**
+"Create a Use Case Diagram for the TaskMaster system showing the interactions between users (regular users and administrators) and the system. Include use cases for account management (register, login, reset password), task management (create, update, delete, filter tasks), dashboard viewing, report generation, user management, system analytics, and activity monitoring. Show which actor can perform which use cases."
+
+### Activity Diagram
+
+The Activity Diagram illustrates the workflow for creating and managing a task in the TaskMaster system.
+
+**PlantUML Code:**
+```
+@startuml TaskMaster Activity Diagram - Task Management
+
+start
+
+:User logs in;
+
+if (Authentication successful?) then (yes)
+  :Display Dashboard;
+  
+  :User navigates to Tasks page;
+  
+  fork
+    :Create New Task;
+    :Enter task details
+    (title, description,
+    deadline, priority);
+    :Submit task;
+    :System validates input;
+    
+    if (Input valid?) then (yes)
+      :Save task to database;
+      :Log user activity;
+      :Display success message;
+    else (no)
+      :Display validation errors;
+      :User corrects input;
+      backward:Submit task;
+    endif
+  fork again
+    :View Existing Tasks;
+    :Apply filters (optional);
+    :Select task;
+    
+    fork
+      :Update Task Details;
+      :Edit task information;
+      :Save changes;
+      :System updates database;
+      :Log user activity;
+    fork again
+      :Update Task Status;
+      :Select new status;
+      :System updates status;
+      :Create task update record;
+      :Log user activity;
+    fork again
+      :Delete Task;
+      :Confirm deletion;
+      :System removes task;
+      :Log user activity;
+    end fork
+  end fork
+  
+  :Return to Dashboard;
+  
+else (no)
+  :Display login error;
+  :Redirect to login page;
+endif
+
+stop
+
+@enduml
+```
+
+**Prompt to Create Activity Diagram:**
+"Create an Activity Diagram for the TaskMaster system showing the workflow for task management. Include the login process, navigating to the tasks page, creating a new task, viewing existing tasks, updating task details, changing task status, and deleting tasks. Show decision points, parallel activities, and the flow of actions from start to finish."
+
+### Collaboration Diagram
+
+The Collaboration Diagram illustrates how objects in the TaskMaster system interact to accomplish the task status update process.
+
+**PlantUML Code:**
+```
+@startuml TaskMaster Collaboration Diagram
+
+actor User
+participant "TasksPage" as UI
+participant "TaskController" as TC
+participant "Task" as T
+participant "TaskUpdate" as TU
+participant "UserActivity" as UA
+participant "Database" as DB
+
+User -> UI : 1. updateTaskStatus(task_id, new_status)
+UI -> TC : 2. processStatusUpdate(task_id, new_status)
+TC -> DB : 3. beginTransaction()
+TC -> T : 4. getTaskDetails(task_id)
+T -> DB : 5. executeQuery()
+DB --> T : 6. return task data
+T --> TC : 7. return task object
+TC -> T : 8. updateStatus(new_status)
+T -> DB : 9. executeQuery()
+DB --> T : 10. return success
+TC -> TU : 11. createUpdate(task_id, user_id, old_status, new_status)
+TU -> DB : 12. executeQuery()
+DB --> TU : 13. return success
+TC -> UA : 14. logActivity(user_id, "update_task_status", details)
+UA -> DB : 15. executeQuery()
+DB --> UA : 16. return success
+TC -> DB : 17. commit()
+DB --> TC : 18. return success
+TC --> UI : 19. return success response
+UI --> User : 20. display success message
+
+@enduml
+```
+
+**Prompt to Create Collaboration Diagram:**
+"Create a Collaboration Diagram for the TaskMaster system showing the interactions between objects during the task status update process. Include the User, TasksPage (UI), TaskController, Task, TaskUpdate, UserActivity, and Database objects. Show the sequence of messages between these objects, starting with the user initiating a status update and ending with the success message displayed."
+
+### Deployment Diagram
+
+The Deployment Diagram illustrates the physical architecture of the TaskMaster system.
+
+**PlantUML Code:**
+```
+@startuml TaskMaster Deployment Diagram
+
+node "Client Device" {
+  artifact "Web Browser" as browser {
+    component "HTML/CSS" as html
+    component "JavaScript" as js
+  }
+}
+
+node "Web Server" {
+  artifact "Apache HTTP Server" as apache {
+    component "PHP Runtime" as php {
+      component "TaskMaster Application" as app {
+        component "Authentication Module" as auth
+        component "Task Management Module" as task
+        component "Reporting Module" as report
+        component "Admin Module" as admin
+      }
+    }
+  }
+}
+
+node "Database Server" {
+  artifact "MySQL/MariaDB" as mysql {
+    database "TaskMaster Database" as db {
+      component "Users Table" as users
+      component "Tasks Table" as tasks
+      component "Task Updates Table" as updates
+      component "User Activity Table" as activity
+    }
+  }
+}
+
+browser -- apache : HTTP/HTTPS
+apache -- mysql : TCP/IP
+
+@enduml
+```
+
+**Prompt to Create Deployment Diagram:**
+"Create a Deployment Diagram for the TaskMaster system showing the physical architecture. Include the client device with web browser (HTML/CSS and JavaScript), web server with Apache HTTP Server and PHP runtime (containing the TaskMaster application modules), and database server with MySQL/MariaDB (containing the TaskMaster database tables). Show the connections between these nodes and the protocols used."
+
+### Component Diagram
+
+The Component Diagram illustrates the software components of the TaskMaster system and their relationships.
+
+**PlantUML Code:**
+```
+@startuml TaskMaster Component Diagram
+
+package "TaskMaster System" {
+  [Authentication Component] as auth
+  [Task Management Component] as task
+  [Dashboard Component] as dashboard
+  [Reporting Component] as report
+  [Admin Component] as admin
+  [Database Access Component] as db
+  [PDF Generator Component] as pdf
+}
+
+interface "User Authentication" as auth_if
+interface "Task Operations" as task_if
+interface "Dashboard Data" as dashboard_if
+interface "Report Generation" as report_if
+interface "Admin Operations" as admin_if
+interface "Database Connection" as db_if
+interface "PDF Creation" as pdf_if
+
+auth - auth_if
+task - task_if
+dashboard - dashboard_if
+report - report_if
+admin - admin_if
+db - db_if
+pdf - pdf_if
+
+auth_if <-- task
+auth_if <-- dashboard
+auth_if <-- report
+auth_if <-- admin
+
+task_if <-- dashboard
+task_if <-- report
+
+dashboard_if <-- task
+
+report_if <-- admin
+report_if <-- pdf
+
+admin_if <-- report
+
+db_if <-- auth
+db_if <-- task
+db_if <-- dashboard
+db_if <-- report
+db_if <-- admin
+
+pdf_if <-- report
+
+@enduml
+```
+
+**Prompt to Create Component Diagram:**
+"Create a Component Diagram for the TaskMaster system showing the main software components and their interfaces. Include the Authentication Component, Task Management Component, Dashboard Component, Reporting Component, Admin Component, Database Access Component, and PDF Generator Component. Show the interfaces provided by each component and the dependencies between components."
+
+### Table Design
+
+The TaskMaster system uses the following database tables:
+
+1. **users**
+   - id (INT, PK, AUTO_INCREMENT) - Unique identifier for each user
+   - name (VARCHAR(100), NULL) - User's full name
+   - email (VARCHAR(100), NOT NULL, UNIQUE) - User's email address, used for login
+   - password (VARCHAR(255), NOT NULL) - Hashed password
+   - role (ENUM('user', 'admin'), NOT NULL, DEFAULT 'user') - User's role in the system
+   - status (ENUM('active', 'inactive'), NOT NULL, DEFAULT 'active') - Account status
+   - last_login (TIMESTAMP, NULL) - Timestamp of last successful login
+   - created_at (TIMESTAMP, DEFAULT CURRENT_TIMESTAMP) - Account creation timestamp
+
+2. **tasks**
+   - id (INT, PK, AUTO_INCREMENT) - Unique identifier for each task
+   - user_id (INT, NOT NULL, FK) - Reference to the user who created the task
+   - title (VARCHAR(100), NOT NULL) - Task title
+   - description (TEXT, NULL) - Detailed task description
+   - deadline (DATETIME, NOT NULL) - Task deadline
+   - status (ENUM('pending', 'in_progress', 'completed'), NOT NULL, DEFAULT 'pending') - Current task status
+   - priority (ENUM('low', 'medium', 'high'), NOT NULL, DEFAULT 'medium') - Task priority level
+   - created_at (TIMESTAMP, DEFAULT CURRENT_TIMESTAMP) - Task creation timestamp
+   - updated_at (TIMESTAMP, DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP) - Last update timestamp
+
+3. **task_updates**
+   - id (INT, PK, AUTO_INCREMENT) - Unique identifier for each update
+   - task_id (INT, NOT NULL, FK) - Reference to the task being updated
+   - user_id (INT, NULL, FK) - Reference to the user who made the update
+   - status_from (ENUM('pending', 'in_progress', 'completed'), NOT NULL) - Previous status
+   - status_to (ENUM('pending', 'in_progress', 'completed'), NOT NULL) - New status
+   - update_date (TIMESTAMP, DEFAULT CURRENT_TIMESTAMP) - Update timestamp
+   - notes (TEXT, NULL) - Optional notes about the update
+
+4. **password_resets**
+   - id (INT, PK, AUTO_INCREMENT) - Unique identifier for each reset request
+   - email (VARCHAR(100), NOT NULL) - User's email address
+   - token (VARCHAR(255), NOT NULL) - Unique token for password reset
+   - created_at (TIMESTAMP, DEFAULT CURRENT_TIMESTAMP) - Request creation timestamp
+   - expires_at (TIMESTAMP, DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP) - Expiration timestamp
+   - used (BOOLEAN, DEFAULT FALSE) - Whether the token has been used
+
+5. **user_activity**
+   - id (INT, PK, AUTO_INCREMENT) - Unique identifier for each activity record
+   - user_id (INT, FK) - Reference to the user who performed the action
+   - action (VARCHAR(50), NOT NULL) - Type of action performed
+   - details (TEXT, NULL) - Additional details about the action
+   - ip_address (VARCHAR(45), NULL) - IP address of the user
+   - created_at (TIMESTAMP, DEFAULT CURRENT_TIMESTAMP) - Activity timestamp
+
+### Data Dictionary
+
+**Table: users**
+| Field | Type | Description | Constraints |
+|-------|------|-------------|-------------|
+| id | INT | Unique identifier | Primary Key, Auto Increment |
+| name | VARCHAR(100) | User's full name | Nullable |
+| email | VARCHAR(100) | User's email address | Not Null, Unique |
+| password | VARCHAR(255) | Hashed password | Not Null |
+| role | ENUM | User's role | Not Null, Default 'user', Values: 'user', 'admin' |
+| status | ENUM | Account status | Not Null, Default 'active', Values: 'active', 'inactive' |
+| last_login | TIMESTAMP | Last login timestamp | Nullable |
+| created_at | TIMESTAMP | Account creation timestamp | Default CURRENT_TIMESTAMP |
+
+**Table: tasks**
+| Field | Type | Description | Constraints |
+|-------|------|-------------|-------------|
+| id | INT | Unique identifier | Primary Key, Auto Increment |
+| user_id | INT | Creator reference | Not Null, Foreign Key (users.id) |
+| title | VARCHAR(100) | Task title | Not Null |
+| description | TEXT | Task description | Nullable |
+| deadline | DATETIME | Task deadline | Not Null |
+| status | ENUM | Current status | Not Null, Default 'pending', Values: 'pending', 'in_progress', 'completed' |
+| priority | ENUM | Priority level | Not Null, Default 'medium', Values: 'low', 'medium', 'high' |
+| created_at | TIMESTAMP | Creation timestamp | Default CURRENT_TIMESTAMP |
+| updated_at | TIMESTAMP | Update timestamp | Default CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP |
+
+**Table: task_updates**
+| Field | Type | Description | Constraints |
+|-------|------|-------------|-------------|
+| id | INT | Unique identifier | Primary Key, Auto Increment |
+| task_id | INT | Task reference | Not Null, Foreign Key (tasks.id) |
+| user_id | INT | User reference | Nullable, Foreign Key (users.id) |
+| status_from | ENUM | Previous status | Not Null, Values: 'pending', 'in_progress', 'completed' |
+| status_to | ENUM | New status | Not Null, Values: 'pending', 'in_progress', 'completed' |
+| update_date | TIMESTAMP | Update timestamp | Default CURRENT_TIMESTAMP |
+| notes | TEXT | Update notes | Nullable |
+
+**Table: password_resets**
+| Field | Type | Description | Constraints |
+|-------|------|-------------|-------------|
+| id | INT | Unique identifier | Primary Key, Auto Increment |
+| email | VARCHAR(100) | User's email | Not Null, Indexed |
+| token | VARCHAR(255) | Reset token | Not Null, Indexed |
+| created_at | TIMESTAMP | Creation timestamp | Default CURRENT_TIMESTAMP |
+| expires_at | TIMESTAMP | Expiration timestamp | Default CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP |
+| used | BOOLEAN | Token usage status | Default FALSE |
+
+**Table: user_activity**
+| Field | Type | Description | Constraints |
+|-------|------|-------------|-------------|
+| id | INT | Unique identifier | Primary Key, Auto Increment |
+| user_id | INT | User reference | Nullable, Foreign Key (users.id) |
+| action | VARCHAR(50) | Action type | Not Null |
+| details | TEXT | Action details | Nullable |
+| ip_address | VARCHAR(45) | IP address | Nullable |
+| created_at | TIMESTAMP | Activity timestamp | Default CURRENT_TIMESTAMP |
+
+### Drawbacks and Limitations
+
+1. **Limited Collaboration Features**
+   - The current system does not support team collaboration on tasks
+   - No task assignment to other users
+   - No shared task lists or projects
+   - Limited communication tools between users
+
+2. **Simple Reporting**
+   - Reports are pre-defined with limited customization options
+   - No advanced analytics or data visualization tools
+   - Limited export formats (PDF only)
+   - Task Trends visualization removed from admin reports and user reports for simplicity
+   - Status options limited to Pending, In Progress, and Completed (Cancelled status removed)
+
+3. **Mobile Experience**
+   - While responsive, the system lacks native mobile applications
+   - Some complex features may be less convenient on smaller screens
+
+4. **Scalability Concerns**
+   - The current architecture may face performance issues with very large user bases
+   - No distributed database or load balancing implementation
+
+5. **Limited Integration**
+   - No API for integration with other systems
+   - No calendar integration (Google Calendar, Outlook, etc.)
+   - No import/export functionality for tasks
+
+6. **Basic User Management**
+   - Limited to two roles (user and admin)
+   - No department or team organization
+   - No user groups or permission levels
+
+7. **Security Considerations**
+   - No two-factor authentication
+   - No OAuth integration for social login
+   - Basic session management
+
+### Proposed Enhancements
+
+1. **Collaboration Features**
+   - Implement task assignment to other users
+   - Add shared task lists and project management
+   - Integrate commenting system on tasks
+   - Add team workspaces with shared dashboards
+
+2. **Enhanced Reporting and Analytics**
+   - Develop customizable report templates
+   - Add interactive data visualization tools
+   - Support multiple export formats (Excel, CSV, etc.)
+   - Implement predictive analytics for task completion trends
+
+3. **Mobile Applications**
+   - Develop native mobile applications for iOS and Android
+   - Implement offline mode with synchronization
+   - Add mobile-specific features like location-based tasks
+
+4. **Scalability Improvements**
+   - Implement caching mechanisms
+   - Design for horizontal scaling
+   - Optimize database queries and indexing
+   - Implement load balancing for high traffic
+
+5. **Integration Capabilities**
+   - Develop a RESTful API for third-party integration
+   - Add calendar synchronization (Google, Outlook)
+   - Implement import/export functionality for tasks
+   - Integrate with popular productivity tools
+
+6. **Enhanced User Management**
+   - Implement multiple user roles and permission levels
+   - Add department and team organization
+   - Develop user groups with shared settings
+   - Implement user activity dashboards
+
+7. **Advanced Security Features**
+   - Implement two-factor authentication
+   - Add OAuth integration for social login
+   - Enhance session management and security
+   - Implement IP-based access restrictions for sensitive operations
+
+8. **Task Enhancements**
+   - Add recurring tasks functionality
+   - Implement subtasks and dependencies
+   - Add time tracking for tasks
+   - Develop task templates for common activities
+
+9. **User Experience Improvements**
+    - Implement drag-and-drop interface for task management
+    - Add dark mode and theme customization
+    - Improve accessibility features
+    - Implement keyboard shortcuts for power users
+
+### Conclusion
+
+The TaskMaster system provides a comprehensive solution for task management, addressing the needs of both individual users and administrators. The system offers a clean, intuitive interface for creating, tracking, and managing tasks, with features such as task prioritization, status tracking, deadline management, and reporting capabilities.
+
+The system architecture follows a three-tier model with a clear separation of concerns between the presentation layer, application layer, and data layer. The database design supports the core functionality while allowing for future expansion and enhancements.
+
+While the current implementation has some limitations, particularly in the areas of collaboration, mobile experience, and advanced reporting, the proposed enhancements provide a roadmap for future development. These enhancements would address the current limitations and add significant value to the system, making it more competitive with commercial task management solutions.
+
+The TaskMaster system demonstrates the effective application of software engineering principles to create a practical, user-friendly application that solves real-world productivity challenges. By focusing on core functionality first and planning for future enhancements, the system provides immediate value while positioning itself for long-term growth and improvement.
+
+### Bibliography
+
+1. Sommerville, I. (2016). Software Engineering (10th ed.). Pearson Education Limited.
+
+2. Pressman, R. S., & Maxim, B. R. (2020). Software Engineering: A Practitioner's Approach (9th ed.). McGraw-Hill Education.
+
+3. Fowler, M. (2003). UML Distilled: A Brief Guide to the Standard Object Modeling Language (3rd ed.). Addison-Wesley Professional.
+
+4. Wiegers, K. E., & Beatty, J. (2013). Software Requirements (3rd ed.). Microsoft Press.
+
+5. Gamma, E., Helm, R., Johnson, R., & Vlissides, J. (1994). Design Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley Professional.
+
+6. Neilsen, J. (2000). Designing Web Usability: The Practice of Simplicity. New Riders Publishing.
+
+7. Krug, S. (2014). Don't Make Me Think, Revisited: A Common Sense Approach to Web Usability (3rd ed.). New Riders Publishing.
+
+8. Connolly, T., & Begg, C. (2014). Database Systems: A Practical Approach to Design, Implementation, and Management (6th ed.). Pearson Education Limited.
+
+9. Gilmore, W. J. (2016). Easy PHP Websites with the Zend Framework (2nd ed.). W.J. Gilmore, LLC.
+
+10. Lockhart, J. (2015). Modern PHP: New Features and Good Practices. O'Reilly Media.
